@@ -1,0 +1,34 @@
+{
+  "name": "WooEd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "browserify": "latest",
+    "grunt": "lastest",
+    "grunt-browser-sync": "^1.9.2",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "jshint": "latest",
+    "mocha": "latest"
+  },
+  "scripts": {
+    "lint": "jshint *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jw56578/WooEd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jw56578/WooEd/issues"
+  },
+  "homepage": "https://github.com/jw56578/WooEd"
+}
