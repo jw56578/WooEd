@@ -10,7 +10,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: ['src/*.js'],
-                dest: 'dist/app.js'
+                dest: 'Build/Release/app.js'
             }
         },
         jshint:{
@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         uglify: {
             development: {
                 files: {
-                    'dist/app.js': 'dist/app.js'
+                    'dist/app.js': 'Build/Release/app.js'
                 }
             },
             options:{}
