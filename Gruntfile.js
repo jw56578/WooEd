@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
-            options: { force: true }, output: ['./dist/*']
+            options: { force: true }, output: ['./dist/*','./Build'] 
         },
         concat: {
             options: {
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.registerTask('default', ['clean','concat','uglify']);
+    grunt.registerTask('default', ['clean']);
     grunt.registerTask('refreshBrowser', ['browserSync']);
     
 }

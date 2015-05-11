@@ -1,6 +1,6 @@
 'use strict'
 
-function init(fragProxy){
+function init(fragProxy,docfrag){
     /*
     Change Observation
     what is the best technique for observing changes

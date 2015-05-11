@@ -2474,9 +2474,17 @@
   </script>
   
   
-  <script src="dist/app.js"></script>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+    System.import('lib/main');
+    </script>
+      
+      
   
-  <template>what does this do?</template>
+      
+  
+  <template>the template tag will show up in IE.what does this do?</template>
   </body>
 
 </html>
