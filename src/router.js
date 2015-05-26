@@ -51,7 +51,7 @@ class Router{
 
 }
 
-//use the logic to pull ou the information into parts URLS vs paramters
+//use the logic to pull out the information into parts URLS vs paramters
 //then when pulling the actual url from the browser use the same logic to pull out the parts and compare
 //-- how is that going to work when the real url no longer has :whatever_id, it just has the number or whatever
 //maintain an array of objects that represent the parsed path
@@ -109,7 +109,8 @@ function router (routes, templateProcessor,routeInfo) {
 
     //});
     //recreate the url from the route minus the paramters
-    templateProcessor.init(match);   
+    //so what happens when there is no route - just request that url from the server as being the controller?
+    templateProcessor.init(match || tmpRouteInfo);         
 }
 
 

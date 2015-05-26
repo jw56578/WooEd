@@ -30,9 +30,12 @@ class Template{
         */
         this.template = template;
         this.templates = {
-            index:{template:'<h1>whats up </h1>',children:
-                {
-                    customer:{template:'<h2>Bob</h2>'}
+            index:{template:'<h1>whats up </h1>',
+                customer:{
+                    template:'<h2>Bob</h2>'
+                },
+                vehicle:{
+                    template:'<h4>vehicle</h4>'
                 }
             }
         };
@@ -48,9 +51,20 @@ class Template{
         fragProxy.innerHTML = markup;
         docfrag.appendChild(fragProxy);  
 
-        System.import('src/index/customer').then(function(){
-
+        //todo - build the url back up from the route excluding param parts
+        //import this as being the default convention 
+        //map the array back up excluding isParam, then concat
+        //should we append controller or something?? i don't want things named controller. what does aurelia call the files
+        //iterrate the route and download the file
+        //wrap the object into something and put in a "scope" holder? to just represent the heirarchy of view models
+        var path = '';
+        route.forEach(function(r,i,rs){
+            path += '/' + r.part;
+            System.import('src' + path).then(function(){
+                
+            });
         });
+        
         //fix this
         window.init(fragProxy,docfrag); 
     }
@@ -61,15 +75,6 @@ function getMarkup(templates,route){
     route.forEach(function(part,i,parts){
         if(templates[part.part]){
             templates = templates[part.part];
-        }else if(templates.children){
-            
-            Object.keys(templates.children).forEach(function(temp,itemp,temps){
-                if(temp === part.part){
-                    templates = templates.children[temp];
-                }
-            
-            });
-        
         }
     
     });
